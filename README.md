@@ -1,44 +1,36 @@
 # Setup
 
-Install docker for desktop. Then create a container with the ROS2 software and a mounted folder "ROS_sim".
+Starting a headless (without the GUI) ROS2 simulation with gazebo.
+
+Install docker for desktop. Then create a container with the ROS2 software and a mounted folder "ROS_sim". 
+You're now in an interactive shell.
 
     docker run -it --name ROS_sim -v ~/ROS_sim:/root/ROS_sim ros:humble
 
-This container does not remove when you stop. To have it be removed after each use, use tag {-rm}.
+This container does not remove when you stop. To have it be removed after each use, use tag -rm.
 
-docker start -ai ROS_sim
+Then install turtlebot3, or any bot:
 
-If you deleted the container, how I entered the container the very first time:
+    apt update && apt install -y ros-humble-turtlebot3*
 
+Then, to have the ROS2 files sourced and the right turtlebot at startup, do:
 
+    nano ~/.bashrc
 
-And install turtlebot3:
+Add these lines:
 
-apt update && apt install -y ros-humble-turtlebot3*
+    source /opt/ros/humble/setup.bash
+    export TURTLEBOT3_MODEL=burger
 
+Or whatever bot model you like. Then, to launch a world without the gui:
 
-Then, ROS2 and turtlebot will startup automatically because of settings.
+    ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py gui:=false
 
-To edit these settings,
+Then you're good to go. If you want to enter a new shell on an already running container:
 
-nano ~/.bashrc
+    docker exec -it <Container ID, i.e. 9581fd25802e> bash
 
-Change these lines at the bottom:
+To restart the container after it's been stopped (for container named ROS_sim):
 
-source /opt/ros/humble/setup.bash
-export TURTLEBOT3_MODEL=burger
+    docker start -ai ROS_sim
 
-
-Then, to launch the world without the gui:
-
-ros2 launch turtlebot3_gazebo turtlebot3_world.launch.py gui:=false
-
-
-To control the robot:
-
-ros2 run turtlebot3_teleop teleop_keyboard
-
-
-To enter an already running container:
-
-docker exec -it 9581fd25802e bash
