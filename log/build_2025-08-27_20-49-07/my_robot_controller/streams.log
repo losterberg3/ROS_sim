@@ -1,0 +1,19 @@
+[1.328s] Invoking command in '/root/ROS_sim/build/my_robot_controller': PYTHONPATH=/root/ROS_sim/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/my_robot_controller/build --no-deps symlink_data --force
+[1.906s] running develop
+[2.135s] running egg_info
+[2.137s] writing my_robot_controller.egg-info/PKG-INFO
+[2.139s] writing dependency_links to my_robot_controller.egg-info/dependency_links.txt
+[2.142s] writing entry points to my_robot_controller.egg-info/entry_points.txt
+[2.145s] writing requirements to my_robot_controller.egg-info/requires.txt
+[2.148s] writing top-level names to my_robot_controller.egg-info/top_level.txt
+[2.172s] reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.191s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.197s] running build_ext
+[2.199s] Creating /root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[2.209s] Installing test_node script to /root/ROS_sim/install/my_robot_controller/lib/my_robot_controller
+[2.219s] 
+[2.223s] Installed /root/ROS_sim/build/my_robot_controller
+[2.228s] running symlink_data
+[2.233s] symbolically linking /root/ROS_sim/build/my_robot_controller/resource/my_robot_controller -> /root/ROS_sim/install/my_robot_controller/share/ament_index/resource_index/packages
+[2.237s] symbolically linking /root/ROS_sim/build/my_robot_controller/package.xml -> /root/ROS_sim/install/my_robot_controller/share/my_robot_controller
+[2.299s] Invoked command in '/root/ROS_sim/build/my_robot_controller' returned '0': PYTHONPATH=/root/ROS_sim/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/my_robot_controller/build --no-deps symlink_data --force
