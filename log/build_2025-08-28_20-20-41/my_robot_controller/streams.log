@@ -1,0 +1,18 @@
+[1.452s] Invoking command in '/root/ROS_sim/build/my_robot_controller': PYTHONPATH=/root/ROS_sim/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/my_robot_controller/build --no-deps symlink_data
+[1.888s] running develop
+[2.264s] running egg_info
+[2.266s] writing my_robot_controller.egg-info/PKG-INFO
+[2.269s] writing dependency_links to my_robot_controller.egg-info/dependency_links.txt
+[2.271s] writing entry points to my_robot_controller.egg-info/entry_points.txt
+[2.273s] writing requirements to my_robot_controller.egg-info/requires.txt
+[2.277s] writing top-level names to my_robot_controller.egg-info/top_level.txt
+[2.293s] reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.302s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[2.312s] running build_ext
+[2.315s] Creating /root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[2.324s] Installing subscriber script to /root/ROS_sim/install/my_robot_controller/lib/my_robot_controller
+[2.329s] Installing test_node script to /root/ROS_sim/install/my_robot_controller/lib/my_robot_controller
+[2.335s] 
+[2.337s] Installed /root/ROS_sim/build/my_robot_controller
+[2.338s] running symlink_data
+[2.395s] Invoked command in '/root/ROS_sim/build/my_robot_controller' returned '0': PYTHONPATH=/root/ROS_sim/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/my_robot_controller/build --no-deps symlink_data
