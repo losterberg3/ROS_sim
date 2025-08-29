@@ -1,0 +1,25 @@
+[3.123s] Invoking command in '/root/ROS_sim/build/my_robot_controller': PYTHONPATH=/root/ROS_sim/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/my_robot_controller/build --no-deps symlink_data
+[4.504s] running develop
+[4.980s] running egg_info
+[4.981s] creating my_robot_controller.egg-info
+[4.983s] writing my_robot_controller.egg-info/PKG-INFO
+[4.988s] writing dependency_links to my_robot_controller.egg-info/dependency_links.txt
+[4.993s] writing entry points to my_robot_controller.egg-info/entry_points.txt
+[4.999s] writing requirements to my_robot_controller.egg-info/requires.txt
+[5.004s] writing top-level names to my_robot_controller.egg-info/top_level.txt
+[5.008s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[5.031s] reading manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[5.047s] writing manifest file 'my_robot_controller.egg-info/SOURCES.txt'
+[5.048s] running build_ext
+[5.051s] Creating /root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages/my-robot-controller.egg-link (link to .)
+[5.069s] Installing subscriber script to /root/ROS_sim/install/my_robot_controller/lib/my_robot_controller
+[5.079s] Installing test_node script to /root/ROS_sim/install/my_robot_controller/lib/my_robot_controller
+[5.088s] 
+[5.092s] Installed /root/ROS_sim/build/my_robot_controller
+[5.096s] running symlink_data
+[5.098s] creating /root/ROS_sim/install/my_robot_controller/share/ament_index
+[5.104s] creating /root/ROS_sim/install/my_robot_controller/share/ament_index/resource_index
+[5.107s] creating /root/ROS_sim/install/my_robot_controller/share/ament_index/resource_index/packages
+[5.110s] symbolically linking /root/ROS_sim/build/my_robot_controller/resource/my_robot_controller -> /root/ROS_sim/install/my_robot_controller/share/ament_index/resource_index/packages
+[5.112s] symbolically linking /root/ROS_sim/build/my_robot_controller/package.xml -> /root/ROS_sim/install/my_robot_controller/share/my_robot_controller
+[5.350s] Invoked command in '/root/ROS_sim/build/my_robot_controller' returned '0': PYTHONPATH=/root/ROS_sim/build/my_robot_controller/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/my_robot_controller/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/my_robot_controller/build --no-deps symlink_data

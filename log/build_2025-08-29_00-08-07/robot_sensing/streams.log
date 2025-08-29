@@ -1,0 +1,17 @@
+[2.509s] Invoking command in '/root/ROS_sim/build/robot_sensing': PYTHONPATH=/root/ROS_sim/build/robot_sensing/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/robot_sensing/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/robot_sensing/build --no-deps symlink_data
+[3.643s] running develop
+[4.278s] running egg_info
+[4.280s] writing robot_sensing.egg-info/PKG-INFO
+[4.284s] writing dependency_links to robot_sensing.egg-info/dependency_links.txt
+[4.287s] writing entry points to robot_sensing.egg-info/entry_points.txt
+[4.291s] writing requirements to robot_sensing.egg-info/requires.txt
+[4.293s] writing top-level names to robot_sensing.egg-info/top_level.txt
+[4.328s] reading manifest file 'robot_sensing.egg-info/SOURCES.txt'
+[4.338s] writing manifest file 'robot_sensing.egg-info/SOURCES.txt'
+[4.343s] running build_ext
+[4.346s] Creating /root/ROS_sim/install/robot_sensing/lib/python3.10/site-packages/robot-sensing.egg-link (link to .)
+[4.355s] Installing imu_lidar_sub script to /root/ROS_sim/install/robot_sensing/lib/robot_sensing
+[4.370s] 
+[4.371s] Installed /root/ROS_sim/build/robot_sensing
+[4.373s] running symlink_data
+[4.458s] Invoked command in '/root/ROS_sim/build/robot_sensing' returned '0': PYTHONPATH=/root/ROS_sim/build/robot_sensing/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/root/ROS_sim/install/robot_sensing/lib/python3.10/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py develop --editable --build-directory /root/ROS_sim/build/robot_sensing/build --no-deps symlink_data
