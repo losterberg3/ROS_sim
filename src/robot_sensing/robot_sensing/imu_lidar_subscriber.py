@@ -59,8 +59,14 @@ class imu_lidar_subscriber(Node):
                 self.orientation_q = self.quaternion_multiply(self.orientation_q, dq)
 
         self.get_logger().info(f"Fused orientation after LiDAR: {self.orientation_q}")
+        self.fused_imuandlidar()
 
-    
+    def fused_imuandlidar(self):
+        for range in self.latest_lidar.ranges:
+            2 * math.pi / 360
+
+
+
     def quaternion_multiply(self, q1, q2):
         x1, y1, z1, w1 = q1
         x2, y2, z2, w2 = q2
@@ -70,22 +76,15 @@ class imu_lidar_subscriber(Node):
         w = w1*w2 - x1*x2 - y1*y2 - z1*z2
         return [x, y, z, w]
 
-
-
     def sensor_fusion(self):
         
         self.get_logger().info(f"Fused state:")
-   
-
 
 def main(args = None):
     rclpy.init(args = args)
     node = imu_lidar_subscriber()
     rclpy.spin(node)
     rclpy._shutdown()
-
-    
-
 
 if __name__ == '__main__':
     main()
