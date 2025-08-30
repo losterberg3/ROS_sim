@@ -3,8 +3,10 @@
 import rclpy
 import math
 import numpy
+import csv
 from rclpy.node import Node
 from sensor_msgs.msg import LaserScan, Imu
+from nav_msgs.msg import Odometry
 from scipy.spatial.transform import Rotation
 
 class imu_lidar_subscriber(Node):
@@ -17,7 +19,7 @@ class imu_lidar_subscriber(Node):
 
         self.lidar_sub = self.create_subscription(LaserScan, "/scan", self.call_back_lidar, 10)
         self.imu_sub = self.create_subscription(Imu, "/imu", self.call_back_imu, 10)
-
+        self.imu_sub = self.create_subscription(Odometry, "/odom", self.call_back_odom, 10)
 
     def call_back_imu(self, msg: Imu):
         self.latest_imu = msg
@@ -28,7 +30,6 @@ class imu_lidar_subscriber(Node):
             "t": self.latest_imu.header.stamp.sec + 1e-9 * self.latest_imu.header.stamp.nanosec
         }
         self.queues.append(queue)
-
 
     def call_back_lidar(self, msg: LaserScan):
         self.latest_lidar = msg
@@ -58,15 +59,41 @@ class imu_lidar_subscriber(Node):
                 
                 self.orientation_q = self.quaternion_multiply(self.orientation_q, dq)
 
-        self.get_logger().info(f"Fused orientation after LiDAR: {self.orientation_q}")
         self.fused_imuandlidar()
 
     def fused_imuandlidar(self):
+        angle = 0
+        self.rangesxy = []
         for range in self.latest_lidar.ranges:
-            2 * math.pi / 360
+            rangexy = [
+                range * math.cos(angle),
+                range * math.sin(angle),
+                0
+            ]
+            self.rangesxy.append(rangexy)
+            angle += 2 * math.pi / 360
 
+        r = Rotation.from_quat(self.orientation_q)
+        self.rotated_points = r.apply(self.rangesxy)
 
+        self.apply_odom()
 
+    def call_back_odom(self, msg: Odometry):
+        self.latest_odom = [
+            msg.pose.pose.position.x,
+            msg.pose.pose.position.y,
+            msg.pose.pose.position.z
+        ]
+        #self.get_logger().info(f"{msg.header.stamp.sec + 1e-9 * msg.header.stamp.nanosec}")
+        
+    def apply_odom(self):
+        self.world_points = numpy.array(self.rotated_points) + numpy.array(self.latest_odom)
+
+        with open('world_points.csv', 'a', newline='') as csvfile:
+            writer = csv.writer(csvfile)
+            for point in self.world_points:
+                writer.writerow([point[0], point[1], point[2]])
+              
     def quaternion_multiply(self, q1, q2):
         x1, y1, z1, w1 = q1
         x2, y2, z2, w2 = q2
@@ -75,10 +102,6 @@ class imu_lidar_subscriber(Node):
         z = w1*z2 + x1*y2 - y1*x2 + z1*w2
         w = w1*w2 - x1*x2 - y1*y2 - z1*z2
         return [x, y, z, w]
-
-    def sensor_fusion(self):
-        
-        self.get_logger().info(f"Fused state:")
 
 def main(args = None):
     rclpy.init(args = args)
